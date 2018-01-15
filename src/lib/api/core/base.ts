@@ -11,19 +11,12 @@ import {
   SimpleChanges,
   OnChanges,
   SimpleChange,
-  Renderer2,
-  Inject,
-  PLATFORM_ID,
 } from '@angular/core';
 
 import {buildLayoutCSS} from '../../utils/layout-validator';
 import {
   StyleDefinition,
-  lookupStyle,
-  lookupInlineStyle,
-  applyStyleToElement,
-  applyStyleToElements,
-  lookupAttributeValue,
+  StyleUtils,
 } from '../../utils/style-utils';
 
 import {ResponsiveActivation, KeyOptions} from '../core/responsive-activation';
@@ -70,8 +63,7 @@ export abstract class BaseFxDirective implements OnDestroy, OnChanges {
    */
   constructor(protected _mediaMonitor: MediaMonitor,
               protected _elementRef: ElementRef,
-              protected _renderer: Renderer2,
-              @Inject(PLATFORM_ID) protected _platformId: Object) {
+              protected _styleUtils: StyleUtils) {
   }
 
   // *********************************************
@@ -137,11 +129,12 @@ export abstract class BaseFxDirective implements OnDestroy, OnChanges {
 
   /**
    * Quick accessor to the current HTMLElement's `display` style
-   * Note: this allows use to preserve the original style
+   * Note: this allows us to preserve the original style
    * and optional restore it when the mediaQueries deactivate
    */
   protected _getDisplayStyle(source: HTMLElement = this.nativeElement): string {
-    return lookupStyle(this._platformId, source || this.nativeElement, 'display');
+    const query = 'display';
+    return this._styleUtils.lookupStyle(source, query);
   }
 
   /**
@@ -149,7 +142,7 @@ export abstract class BaseFxDirective implements OnDestroy, OnChanges {
    */
   protected _getAttributeValue(attribute: string,
                                source: HTMLElement = this.nativeElement): string {
-    return lookupAttributeValue(source || this.nativeElement, attribute);
+    return this._styleUtils.lookupAttributeValue(source, attribute);
   }
 
   /**
@@ -158,15 +151,20 @@ export abstract class BaseFxDirective implements OnDestroy, OnChanges {
    * Check inline style first then check computed (stylesheet) style.
    * And optionally add the flow value to element's inline style.
    */
-  protected _getFlowDirection(target: any, addIfMissing = false): string {
+  protected _getFlowDirection(target: HTMLElement, addIfMissing = false): string {
     let value = 'row';
+    let hasInlineValue = '';
+    const query = 'flex-direction';
 
     if (target) {
-      value = lookupStyle(this._platformId, target, 'flex-direction') || 'row';
-      let hasInlineValue = lookupInlineStyle(target, 'flex-direction');
+
+      value = this._styleUtils.lookupStyle(target, query) || 'row';
+      hasInlineValue = this._styleUtils.lookupInlineStyle(target, query);
 
       if (!hasInlineValue && addIfMissing) {
-        applyStyleToElements(this._renderer, buildLayoutCSS(value), [target]);
+        const style = buildLayoutCSS(value);
+        const elements = [target];
+        this._styleUtils.applyStyleToElements(style, elements);
       }
     }
 
@@ -178,16 +176,15 @@ export abstract class BaseFxDirective implements OnDestroy, OnChanges {
    */
   protected _applyStyleToElement(style: StyleDefinition,
                                  value?: string | number,
-                                 nativeElement: any = this.nativeElement) {
-    let element = nativeElement || this.nativeElement;
-    applyStyleToElement(this._renderer, element, style, value);
+                                 element: HTMLElement = this.nativeElement) {
+    this._styleUtils.applyStyleToElement(element, style, value);
   }
 
   /**
    * Applies styles given via string pair or object map to the directive's element.
    */
-  protected _applyStyleToElements(style: StyleDefinition, elements: HTMLElement[ ]) {
-    applyStyleToElements(this._renderer, style, elements || []);
+  protected _applyStyleToElements(style: StyleDefinition, elements: HTMLElement[]) {
+    this._styleUtils.applyStyleToElements(style, elements);
   }
 
   /**

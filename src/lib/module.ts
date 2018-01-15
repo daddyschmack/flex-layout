@@ -31,6 +31,9 @@ import {ShowHideDirective} from './api/ext/show-hide';
 import {ClassDirective} from './api/ext/class';
 import {StyleDirective} from './api/ext/style';
 import {ImgSrcDirective} from './api/ext/img-src';
+import {ServerStylesheet} from './utils/server-stylesheet';
+import {SERVER_PROVIDER} from './utils/server-provider';
+import {StyleUtils} from './utils/style-utils';
 
 /**
  * Since the equivalent results are easily achieved with a css class attached to each
@@ -65,7 +68,10 @@ const ALL_DIRECTIVES = [
   providers: [
     MEDIA_MONITOR_PROVIDER,
     DEFAULT_BREAKPOINTS_PROVIDER,   // Extend defaults with internal custom breakpoints
-    OBSERVABLE_MEDIA_PROVIDER
+    OBSERVABLE_MEDIA_PROVIDER,
+    ServerStylesheet,
+    StyleUtils,
+    SERVER_PROVIDER,
   ]
 })
 export class FlexLayoutModule {
