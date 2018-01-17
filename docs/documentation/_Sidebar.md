@@ -1,6 +1,6 @@
-*  [Home](https://github.com/angular/flex-layout/wiki)
+* [Home](https://github.com/angular/flex-layout/wiki)
 
-*  Quick Links
+* Quick Links
   *  [Gitter Chat](https://gitter.im/angular/flex-layout)
   *  [Discussion Forum](https://groups.google.com/forum/#!forum/angular-flex-layout)
 
@@ -37,7 +37,7 @@
   * [WebPack Configuration](https://github.com/angular/flex-layout/wiki/Webpack-Configuration)
 
 * Contributing
-  * [Contributing](https://github.com/angular/flex-layout/wiki/Contributing-to-Angular-2-Flex-Layout)
-  * [Coding Standards](https://github.com/angular/flex-layout/wiki/Angular-Flex-Layout-Coding-Standards)
-  * [Code Review](https://github.com/angular/flex-layout/wiki/Code-reviews)
+  * [Contributing](https://github.com/angular/flex-layout/blob/master/CONTRIBUTING.md)
+  * [Coding Standards](https://github.com/angular/flex-layout/blob/master/CODING_STANDARDS.md)
+  * [Code Review](https://github.com/angular/flex-layout/blob/master/CODE_REVIEWS.md)
 

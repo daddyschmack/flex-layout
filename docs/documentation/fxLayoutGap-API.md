@@ -49,7 +49,7 @@ The [**fxLayoutGap** directive](https://github.com/angular/flex-layout/blob/mast
 
 ### Using fxLayoutGap with **Wrap**
 
-When using `fxLayoutWrap` to wrap rows or columns, developers should account for the gap sizes when specifying the child item sizes (using fxFlex).
+When using `wrap` with `fxLayout` to wrap rows or columns, developers should account for the gap sizes when specifying the child item sizes (using fxFlex).
 
 <br/>
 
@@ -69,7 +69,7 @@ When using `fxLayoutWrap` to wrap rows or columns, developers should account for
 <md-card fxFlex fxFlexAlign="start">
 
     <md-card-content>
-      <div fxLayout fxLayout.xs="column" fxLayoutWrap fxLayoutGap="25px">
+      <div fxLayout fxLayout.xs="column wrap" fxLayoutGap="25px">
         <md-input-container fxFlex="calc(50% - 25px)">
           <input mdInput placeholder="Name">
         </md-input-container>
