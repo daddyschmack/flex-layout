@@ -9,7 +9,11 @@ import {ElementRef} from '@angular/core';
 import {BaseFxDirectiveAdapter} from './base-adapter';
 import {expect} from '../../utils/testing/custom-matchers';
 import {MediaMonitor} from '../../media-query/media-monitor';
+<<<<<<< Updated upstream
 import {StyleUtils} from '../../utils/style-utils';
+=======
+import {StylerService} from '../../utils/styling/styler';
+>>>>>>> Stashed changes
 
 export class MockElementRef extends ElementRef {
   constructor() {
@@ -22,7 +26,11 @@ export class MockElementRef extends ElementRef {
 describe('BaseFxDirectiveAdapter class', () => {
   let component;
   beforeEach(() => {
+<<<<<<< Updated upstream
     component = new BaseFxDirectiveAdapter('', {} as MediaMonitor, new MockElementRef(), {} as StyleUtils); // tslint:disable-line:max-line-length
+=======
+    component = new BaseFxDirectiveAdapter('', {} as MediaMonitor, new MockElementRef(), {} as StylerService); // tslint:disable-line:max-line-length
+>>>>>>> Stashed changes
   });
   describe('cacheInput', () => {
     it('should call _cacheInputArray when source is an array', () => {

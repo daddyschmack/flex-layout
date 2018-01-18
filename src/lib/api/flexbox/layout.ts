@@ -21,7 +21,11 @@ import {MediaChange} from '../../media-query/media-change';
 import {MediaMonitor} from '../../media-query/media-monitor';
 import {buildLayoutCSS} from '../../utils/layout-validator';
 import {ReplaySubject} from 'rxjs/ReplaySubject';
+<<<<<<< Updated upstream
 import {StyleUtils} from '../../utils/style-utils';
+=======
+import {StylerService} from '../../utils/styling/styler';
+>>>>>>> Stashed changes
 /**
  * 'layout' flexbox styling directive
  * Defines the positioning flow direction for the child elements: row or column
@@ -73,7 +77,11 @@ export class LayoutDirective extends BaseFxDirective implements OnInit, OnChange
    */
   constructor(monitor: MediaMonitor,
               elRef: ElementRef,
+<<<<<<< Updated upstream
               styleUtils: StyleUtils) {
+=======
+              styleUtils: StylerService) {
+>>>>>>> Stashed changes
     super(monitor, elRef, styleUtils);
     this._announcer = new ReplaySubject<string>(1);
     this.layout$ = this._announcer.asObservable();

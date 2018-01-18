@@ -23,8 +23,13 @@ import {
 } from '../../utils/testing/helpers';
 import {ShowHideDirective} from './show-hide';
 import {MediaQueriesModule} from '../../media-query/_module';
+<<<<<<< Updated upstream
 import {ServerStylesheet} from '../../utils/server-stylesheet';
 import {StyleUtils} from '../../utils/style-utils';
+=======
+import {ServerStylesheet} from '../../utils/styling/server-stylesheet';
+import {StylerService} from '../../utils/styling/styler';
+>>>>>>> Stashed changes
 
 describe('hide directive', () => {
   let fixture: ComponentFixture<any>;
@@ -64,7 +69,11 @@ describe('hide directive', () => {
         BreakPointRegistry, DEFAULT_BREAKPOINTS_PROVIDER,
         {provide: MatchMedia, useClass: MockMatchMedia},
         ServerStylesheet,
+<<<<<<< Updated upstream
         StyleUtils,
+=======
+        StylerService,
+>>>>>>> Stashed changes
       ]
     });
   });

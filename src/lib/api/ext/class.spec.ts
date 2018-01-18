@@ -21,8 +21,13 @@ import {BreakPointRegistry} from '../../media-query/breakpoints/break-point-regi
 
 import {ClassDirective} from './class';
 import {MediaQueriesModule} from '../../media-query/_module';
+<<<<<<< Updated upstream
 import {ServerStylesheet} from '../../utils/server-stylesheet';
 import {StyleUtils} from '../../utils/style-utils';
+=======
+import {ServerStylesheet} from '../../utils/styling/server-stylesheet';
+import {StylerService} from '../../utils/styling/styler';
+>>>>>>> Stashed changes
 
 describe('class directive', () => {
   let fixture: ComponentFixture<any>;
@@ -50,7 +55,11 @@ describe('class directive', () => {
         BreakPointRegistry, DEFAULT_BREAKPOINTS_PROVIDER,
         {provide: MatchMedia, useClass: MockMatchMedia},
         ServerStylesheet,
+<<<<<<< Updated upstream
         StyleUtils,
+=======
+        StylerService,
+>>>>>>> Stashed changes
       ]
     });
   });

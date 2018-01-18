@@ -9,7 +9,11 @@ import {Directive, ElementRef} from '@angular/core';
 
 import {MediaMonitor} from '../../media-query/media-monitor';
 import {BaseFxDirective} from '../core/base';
+<<<<<<< Updated upstream
 import {StyleUtils} from '../../utils/style-utils';
+=======
+import {StylerService} from '../../utils/styling/styler';
+>>>>>>> Stashed changes
 
 const FLEX_FILL_CSS = {
   'margin': 0,
@@ -32,7 +36,11 @@ const FLEX_FILL_CSS = {
 export class FlexFillDirective extends BaseFxDirective {
   constructor(monitor: MediaMonitor,
               public elRef: ElementRef,
+<<<<<<< Updated upstream
               styleUtils: StyleUtils) {
+=======
+              styleUtils: StylerService) {
+>>>>>>> Stashed changes
     super(monitor, elRef, styleUtils);
     this._applyStyleToElement(FLEX_FILL_CSS);
   }

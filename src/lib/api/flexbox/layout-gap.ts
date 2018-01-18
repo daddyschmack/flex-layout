@@ -24,7 +24,11 @@ import {LayoutDirective} from './layout';
 import {MediaChange} from '../../media-query/media-change';
 import {MediaMonitor} from '../../media-query/media-monitor';
 import {LAYOUT_VALUES} from '../../utils/layout-validator';
+<<<<<<< Updated upstream
 import {StyleUtils} from '../../utils/style-utils';
+=======
+import {StylerService} from '../../utils/styling/styler';
+>>>>>>> Stashed changes
 
 /**
  * 'layout-padding' styling directive
@@ -67,7 +71,11 @@ export class LayoutGapDirective extends BaseFxDirective implements AfterContentI
               elRef: ElementRef,
               @Optional() @Self() container: LayoutDirective,
               private _zone: NgZone,
+<<<<<<< Updated upstream
               styleUtils: StyleUtils) {
+=======
+              styleUtils: StylerService) {
+>>>>>>> Stashed changes
     super(monitor, elRef, styleUtils);
 
     if (container) {  // Subscribe to layout direction changes

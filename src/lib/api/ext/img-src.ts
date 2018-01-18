@@ -16,7 +16,11 @@ import {
 
 import {BaseFxDirective} from '../core/base';
 import {MediaMonitor} from '../../media-query/media-monitor';
+<<<<<<< Updated upstream
 import {StyleUtils} from '../../utils/style-utils';
+=======
+import {StylerService} from '../../utils/styling/styler';
+>>>>>>> Stashed changes
 
 /**
  * This directive provides a responsive API for the HTML <img> 'src' attribute
@@ -59,8 +63,13 @@ export class ImgSrcDirective extends BaseFxDirective implements OnInit, OnChange
   constructor(protected _elRef: ElementRef,
               protected _renderer: Renderer2,
               protected _monitor: MediaMonitor,
+<<<<<<< Updated upstream
               protected _styleUtils: StyleUtils) {
     super(_monitor, _elRef, _styleUtils);
+=======
+              protected _styler: StylerService) {
+    super(_monitor, _elRef, _styler);
+>>>>>>> Stashed changes
     this._cacheInput('src', _elRef.nativeElement.getAttribute('src') || '');
   }
 

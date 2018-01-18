@@ -18,7 +18,11 @@ import {
 import {BaseFxDirective} from '../core/base';
 import {MediaChange} from '../../media-query/media-change';
 import {MediaMonitor} from '../../media-query/media-monitor';
+<<<<<<< Updated upstream
 import {StyleUtils} from '../../utils/style-utils';
+=======
+import {StylerService} from '../../utils/styling/styler';
+>>>>>>> Stashed changes
 
 /**
  * 'flex-align' flexbox styling directive
@@ -56,7 +60,11 @@ export class FlexAlignDirective extends BaseFxDirective implements OnInit, OnCha
   /* tslint:enable */
   constructor(monitor: MediaMonitor,
               elRef: ElementRef,
+<<<<<<< Updated upstream
               styleUtils: StyleUtils) {
+=======
+              styleUtils: StylerService) {
+>>>>>>> Stashed changes
     super(monitor, elRef, styleUtils);
   }
 

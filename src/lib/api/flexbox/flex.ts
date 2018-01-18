@@ -26,7 +26,11 @@ import {MediaMonitor} from '../../media-query/media-monitor';
 import {LayoutDirective} from './layout';
 import {validateBasis} from '../../utils/basis-validator';
 import {isFlowHorizontal} from '../../utils/layout-validator';
+<<<<<<< Updated upstream
 import {StyleUtils} from '../../utils/style-utils';
+=======
+import {StylerService} from '../../utils/styling/styler';
+>>>>>>> Stashed changes
 
 
 /** Built-in aliases for different flex-basis values. */
@@ -84,7 +88,11 @@ export class FlexDirective extends BaseFxDirective implements OnInit, OnChanges,
   constructor(monitor: MediaMonitor,
               elRef: ElementRef,
               @Optional() @SkipSelf() protected _container: LayoutDirective,
+<<<<<<< Updated upstream
               protected styleUtils: StyleUtils) {
+=======
+              protected styleUtils: StylerService) {
+>>>>>>> Stashed changes
 
     super(monitor, elRef, styleUtils);
 

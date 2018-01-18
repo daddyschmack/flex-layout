@@ -11,7 +11,11 @@ import {BaseFxDirective} from './base';
 import {ResponsiveActivation} from './responsive-activation';
 import {MediaQuerySubscriber} from '../../media-query/media-change';
 import {MediaMonitor} from '../../media-query/media-monitor';
+<<<<<<< Updated upstream
 import {StyleUtils} from '../../utils/style-utils';
+=======
+import {StylerService} from '../../utils/styling/styler';
+>>>>>>> Stashed changes
 
 
 /**
@@ -49,8 +53,13 @@ export class BaseFxDirectiveAdapter extends BaseFxDirective {
   constructor(protected _baseKey: string,   // non-responsive @Input property name
               protected _mediaMonitor: MediaMonitor,
               protected _elementRef: ElementRef,
+<<<<<<< Updated upstream
               protected _styleUtils: StyleUtils) {
     super(_mediaMonitor, _elementRef, _styleUtils);
+=======
+              protected _styler: StylerService) {
+    super(_mediaMonitor, _elementRef, _styler);
+>>>>>>> Stashed changes
   }
 
   /**

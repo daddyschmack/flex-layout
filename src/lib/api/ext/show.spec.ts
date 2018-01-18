@@ -18,8 +18,13 @@ import {FlexLayoutModule} from '../../module';
 
 import {customMatchers} from '../../utils/testing/custom-matchers';
 import {makeCreateTestComponent, expectNativeEl} from '../../utils/testing/helpers';
+<<<<<<< Updated upstream
 import {ServerStylesheet} from '../../utils/server-stylesheet';
 import {StyleUtils} from '../../utils/style-utils';
+=======
+import {ServerStylesheet} from '../../utils/styling/server-stylesheet';
+import {StylerService} from '../../utils/styling/styler';
+>>>>>>> Stashed changes
 
 describe('show directive', () => {
   let fixture: ComponentFixture<any>;
@@ -43,7 +48,11 @@ describe('show directive', () => {
         BreakPointRegistry, DEFAULT_BREAKPOINTS_PROVIDER,
         {provide: MatchMedia, useClass: MockMatchMedia},
         ServerStylesheet,
+<<<<<<< Updated upstream
         StyleUtils,
+=======
+        StylerService,
+>>>>>>> Stashed changes
       ]
     });
   });

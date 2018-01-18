@@ -34,9 +34,13 @@ import {
   NgStyleType,
   NgStyleSanitizer,
   ngStyleUtils as _
-} from '../../utils/style-transforms';
+} from '../../utils/styling/style-transforms';
 import {RendererAdapter} from '../core/renderer-adapter';
+<<<<<<< Updated upstream
 import {StyleUtils} from '../../utils/style-utils';
+=======
+import {StylerService} from '../../utils/styling/styler';
+>>>>>>> Stashed changes
 
 
 /**
@@ -92,9 +96,15 @@ export class StyleDirective extends BaseFxDirective
               protected _renderer: Renderer2,
               protected _differs: KeyValueDiffers,
               @Optional() @Self() private _ngStyleInstance: NgStyle,
+<<<<<<< Updated upstream
               protected _styleUtils: StyleUtils) {
 
     super(monitor, _ngEl, _styleUtils);
+=======
+              protected _styler: StylerService) {
+
+    super(monitor, _ngEl, _styler);
+>>>>>>> Stashed changes
     this._configureAdapters();
   }
 
@@ -140,7 +150,11 @@ export class StyleDirective extends BaseFxDirective
           'ngStyle',
           this.monitor,
           this._ngEl,
+<<<<<<< Updated upstream
           this._styleUtils
+=======
+          this._styler
+>>>>>>> Stashed changes
         );
         if (!this._ngStyleInstance) {
           // Create an instance NgClass Directive instance only if `ngClass=""` has NOT been

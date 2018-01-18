@@ -16,8 +16,13 @@ import {
 import {buildLayoutCSS} from '../../utils/layout-validator';
 import {
   StyleDefinition,
+<<<<<<< Updated upstream
   StyleUtils,
 } from '../../utils/style-utils';
+=======
+  StylerService,
+} from '../../utils/styling/styler';
+>>>>>>> Stashed changes
 
 import {ResponsiveActivation, KeyOptions} from '../core/responsive-activation';
 import {MediaMonitor} from '../../media-query/media-monitor';
@@ -63,7 +68,11 @@ export abstract class BaseFxDirective implements OnDestroy, OnChanges {
    */
   constructor(protected _mediaMonitor: MediaMonitor,
               protected _elementRef: ElementRef,
+<<<<<<< Updated upstream
               protected _styleUtils: StyleUtils) {
+=======
+              protected _styler: StylerService) {
+>>>>>>> Stashed changes
   }
 
   // *********************************************
@@ -134,7 +143,11 @@ export abstract class BaseFxDirective implements OnDestroy, OnChanges {
    */
   protected _getDisplayStyle(source: HTMLElement = this.nativeElement): string {
     const query = 'display';
+<<<<<<< Updated upstream
     return this._styleUtils.lookupStyle(source, query);
+=======
+    return this._styler.lookupStyle(source, query);
+>>>>>>> Stashed changes
   }
 
   /**
@@ -142,7 +155,11 @@ export abstract class BaseFxDirective implements OnDestroy, OnChanges {
    */
   protected _getAttributeValue(attribute: string,
                                source: HTMLElement = this.nativeElement): string {
+<<<<<<< Updated upstream
     return this._styleUtils.lookupAttributeValue(source, attribute);
+=======
+    return this._styler.lookupAttributeValue(source, attribute);
+>>>>>>> Stashed changes
   }
 
   /**
@@ -158,13 +175,22 @@ export abstract class BaseFxDirective implements OnDestroy, OnChanges {
 
     if (target) {
 
+<<<<<<< Updated upstream
       value = this._styleUtils.lookupStyle(target, query) || 'row';
       hasInlineValue = this._styleUtils.lookupInlineStyle(target, query);
+=======
+      value = this._styler.lookupStyle(target, query) || 'row';
+      hasInlineValue = this._styler.lookupInlineStyle(target, query);
+>>>>>>> Stashed changes
 
       if (!hasInlineValue && addIfMissing) {
         const style = buildLayoutCSS(value);
         const elements = [target];
+<<<<<<< Updated upstream
         this._styleUtils.applyStyleToElements(style, elements);
+=======
+        this._styler.applyStyleToElements(style, elements);
+>>>>>>> Stashed changes
       }
     }
 
@@ -177,14 +203,22 @@ export abstract class BaseFxDirective implements OnDestroy, OnChanges {
   protected _applyStyleToElement(style: StyleDefinition,
                                  value?: string | number,
                                  element: HTMLElement = this.nativeElement) {
+<<<<<<< Updated upstream
     this._styleUtils.applyStyleToElement(element, style, value);
+=======
+    this._styler.applyStyleToElement(element, style, value);
+>>>>>>> Stashed changes
   }
 
   /**
    * Applies styles given via string pair or object map to the directive's element.
    */
   protected _applyStyleToElements(style: StyleDefinition, elements: HTMLElement[]) {
+<<<<<<< Updated upstream
     this._styleUtils.applyStyleToElements(style, elements);
+=======
+    this._styler.applyStyleToElements(style, elements);
+>>>>>>> Stashed changes
   }
 
   /**

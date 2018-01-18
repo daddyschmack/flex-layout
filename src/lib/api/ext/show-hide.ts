@@ -23,7 +23,11 @@ import {BaseFxDirective} from '../core/base';
 import {MediaChange} from '../../media-query/media-change';
 import {MediaMonitor} from '../../media-query/media-monitor';
 import {LayoutDirective} from '../flexbox/layout';
+<<<<<<< Updated upstream
 import {StyleUtils} from '../../utils/style-utils';
+=======
+import {StylerService} from '../../utils/styling/styler';
+>>>>>>> Stashed changes
 
 const FALSY = ['false', false, 0];
 
@@ -104,7 +108,11 @@ export class ShowHideDirective extends BaseFxDirective implements OnInit, OnChan
   constructor(monitor: MediaMonitor,
               @Optional() @Self() protected layout: LayoutDirective,
               protected elRef: ElementRef,
+<<<<<<< Updated upstream
               protected styleUtils: StyleUtils) {
+=======
+              protected styleUtils: StylerService) {
+>>>>>>> Stashed changes
 
     super(monitor, elRef, styleUtils);
 

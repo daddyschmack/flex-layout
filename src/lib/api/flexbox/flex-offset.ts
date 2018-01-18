@@ -24,7 +24,11 @@ import {MediaChange} from '../../media-query/media-change';
 import {MediaMonitor} from '../../media-query/media-monitor';
 import {LayoutDirective} from './layout';
 import {isFlowHorizontal} from '../../utils/layout-validator';
+<<<<<<< Updated upstream
 import {StyleUtils} from '../../utils/style-utils';
+=======
+import {StylerService} from '../../utils/styling/styler';
+>>>>>>> Stashed changes
 
 /**
  * 'flex-offset' flexbox styling directive
@@ -60,7 +64,11 @@ export class FlexOffsetDirective extends BaseFxDirective implements OnInit, OnCh
   constructor(monitor: MediaMonitor,
               elRef: ElementRef,
               @Optional() @SkipSelf() protected _container: LayoutDirective,
+<<<<<<< Updated upstream
               styleUtils: StyleUtils) {
+=======
+              styleUtils: StylerService) {
+>>>>>>> Stashed changes
     super(monitor, elRef, styleUtils);
 
 
